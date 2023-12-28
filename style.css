@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.animalContainer {
+  width: 750px;
+  height: fit-content;
+  margin: 100px 10px 0 0;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.animalCard {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.animalCard li {
+  cursor: pointer;
+  margin-top: 15px;
+}
+.btn {
+  padding: 10px;
+  width: 70px;
+  background: #111;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: ease-in-out;
+}
+
+.cardContent img {
+  height: 250px;
+}
+.cardContent {
+  text-align: center;
+  height: 100vh;
+}

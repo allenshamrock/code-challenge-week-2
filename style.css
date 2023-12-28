@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 
-h1{
-    text-align: center;
-    padding-top: 10px;
+h1 {
+  text-align: center;
+  padding-top: 10px;
 }
 
 .animalContainer {
@@ -37,7 +37,15 @@ h1{
   outline: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: ease-in-out;
+  transition: background-color 0.3s ease-in;
+}
+
+.btn:active {
+  transform: scale(1.2); 
+}
+
+.btn:hover {
+  background-color: #2ecc71;
 }
 
 .cardContent img {

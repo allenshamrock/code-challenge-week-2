@@ -1,7 +1,7 @@
 // // Getting data from the server
 function fetchCharacter() {
   return fetch("http://localhost:3000/characters")
-    .then((response) => response.json())
+    .then((res) => res.json())
     .then((data) => getCharacters(data));
 }
 
@@ -19,8 +19,8 @@ function getCharacters(names) {
 }
 
 // Function for getting the character by id
-function fetchAnimals(animalId) {
-  fetch(`http://localhost:3000/characters/${animalId}`)
+function fetchAnimals(charactersId) {
+  fetch(`http://localhost:3000/characters/${charactersId}`)
     .then((response) => response.json())
     .then((data) => displayAnimals(data));
 }

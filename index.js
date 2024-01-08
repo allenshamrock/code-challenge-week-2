@@ -10,12 +10,13 @@ fetchCharacter();
 // Function for getting the characters from the array
 function getCharacters(names) {
   const ol = document.querySelector("ol");
-  names.forEach((element) => {
+
+  for (const element of names) {
     const li = document.createElement("li");
     li.textContent = element.name;
     li.addEventListener("click", () => fetchAnimals(element.id));
     ol.appendChild(li);
-  });
+  }
 }
 
 // Function for getting the character by id
@@ -45,12 +46,11 @@ function displayAnimals(item) {
 
   let voteCount = item.votes; // Initialize voteCount with the current votes
 
-  actualAnimal.querySelector('.btn').addEventListener('click', function () {
+  actualAnimal.querySelector(".btn").addEventListener("click", function () {
     // Increment vote count when the button is clicked
     voteCount++;
-    actualAnimal.querySelector('.vote').innerText = `Votes: ${voteCount}`;
+    actualAnimal.querySelector(".vote").innerText = `Votes: ${voteCount}`;
   });
 
   document.body.appendChild(actualAnimal);
 }
-

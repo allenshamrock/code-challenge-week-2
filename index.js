@@ -44,13 +44,27 @@ function displayAnimals(item) {
     </div>
   `;
 
-  let voteCount = item.votes; // Initialize voteCount with the current votes
+  //let voteCount = item.votes; // Initialize voteCount with the current votes
 
   actualAnimal.querySelector(".btn").addEventListener("click", function () {
     // Increment vote count when the button is clicked
-    voteCount++;
-    actualAnimal.querySelector(".vote").innerText = `Votes: ${voteCount}`;
+    item.votes +=1
+   
+    actualAnimal.querySelector(".vote").innerText = `Votes: ${item.votes}`;
+     updateVotes(item);
   });
 
   document.body.appendChild(actualAnimal);
+}
+
+function updateVotes(item) {
+  fetch(`http://localhost:3000/characters/${item.id}`, {
+    method: "PATCH",
+    headers: {
+      "content-Type": "application/json",
+    },
+    body: JSON.stringify(item),
+  })
+    .then((res) => res.json)
+    .then((data) => console.log(data));
 }
